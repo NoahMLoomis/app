@@ -5,7 +5,7 @@ import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { SelectValue } from '@radix-ui/react-select'
 
-import { Box, Button, Input } from '@/components/ui'
+import { Box, Button, Input, Toggler } from '@/components/ui'
 import {
   Form,
   FormControl,
@@ -72,7 +72,10 @@ export const Settings = () => {
   return (
     <div className="max-w-lg mx-auto my-8">
       <Box>
-        <h2>Settings</h2>
+        <div className="flex justify-between items-center">
+          <h2>Settings</h2>
+          <Toggler />
+        </div>
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <Form {...form}>
             <FormField
